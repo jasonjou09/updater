@@ -1,0 +1,76 @@
+Serial number naming logic:
+X.X.X (ex: 1.2.1)
+-first X only change annually upon new generation when all/most AI models contained in the app receives overhaul, or when track used is changed so that backward compatibility is completely eliminated.
+-second X change when a. algorithm for result computation is tweaked in any way
+		      b. method for spectrogram generation is changed in any way
+		      c. new product line is added
+		      d. some existing models have been retrained for adjustment reasons
+		      e. threshold line is altered
+		      f. app fundamental logic has changed
+		      g. app UI receives major update
+-third X change when some fixing some bugs or update some small features.
+
+
+V1.1
+-Change the spectrogram generation method from matplotlib.specgram to more stable Librosa library.
+-Change the range of difference calculation in frequency from 20kHz down to 14kHz to improve result sensitivity
+-Unified the difference calculation, now time domain data are also calculated by averaging the absolute differences, and the calculation are done after the by-row normalization on frequency. It matches the method of calculation just like frequency difference.
+-Add the x-axis location data in the output raw data file.
+-Add the feature to output the overall raw data graph when outputting raw data, now 4 png image will be generated along with the original 4 csv files.
+-Add a column that indicate the fail/pass status of each file in the output report.
+
+V1.2
+-Sort the list before calculation so that both in-app DUT selection list and the output report is sorted.
+-Added dumb-proof that disable AI model dropdown to prevent user from switching the AI model when the scanning mode is on.
+-Added dumb-proof that disable folder selection button to prevent user from selecting other folders when scanning mode is on.
+-Added a new tab to cover all license and ensure no legal copyright issue.
+-Adjusted the tab button color to make the selected tab more visible
+
+V1.2.1
+-Added a reset button that can clear all the existing result in the app.
+-Change the way license notices are shown to add difficulty for users to guess the modules used in the app.
+-Change the way windows system bring up the app to increase the clarity of the app content.
+-Change the app icon from default tkinter app icon to HP logo.
+-Some UI layout optimization.
+-Some code optimization
+
+V1.3
+-Made x-axis label of the frequency plot denser for more readable graph.
+-Added a capability to automatically pad background noise into the audio file when input file is too short.
+-Changed Training Optimizer and re-trained all model to slightly increase the flexibility of models.
+
+V1.3.1
+-Added a password button to ensure OP can't easily alter the result, password is 640320.
+-Re-training the 1000 series model to resolve the Gemtree piano deviation problem. (More test is still needed)
+-Added AIO Model for test purpose only (Training sets too small, might be unreliable)
+
+V1.4
+-Optimize existing code to reduce I/O access counts and reduce complexity
+-Shrink and optimize model size without hurting performance. (more test need to be carried out)
+-Enhance overall model accuracy with data augmentation
+-Hide occasional pop-up warnings in consoles when analyzing to reduce app content disclosure.
+-Further improved model reliability on Gemtree
+-Added splash screen when the app boots.
+-Fix the frequency graph in output raw data button
+
+V1.4.1
+-Changed the output report and output raw data function to automatically execute after every iteration, deleting their output button.
+-Changed the way the output report display to include date and keep only SN numbers in name.
+-Changed the scanning mode logic to eliminate a bug that makes scanning mode turning off later than the GUI indicates, also optimized the logic to make it less prone to lag
+-Added a condition in scanning mode to fix a bug that can freeze the app.
+-Add a exception fail-safe when accessing audio track in folder, eliminate the risk of failing by access denied.
+-Optimize the code structure to unify the plotting logic
+-Optimize the code structure for ease of future updates (The rest are completed in version 1.4.2)
+
+V1.4.2 (Test version, update content not finalized)
+-Added the feature to playback the music track. (Done)
+-Added an error safe feature that notify the user to close the report file before it try to write them. (Done)
+-Changed underlying structure of the app. (Done)
+-Changed the frequency domain range from 870Hz~14000Hz to 2000Hz~14000Hz. (Function completed, change not finalized)
+-Ignore the edges of piano spectrogram when evaluating result to improve result consistency (Done)
+-Create an update-checking function that can tell the user if they are using the newest version. This function utilizes GitHub to maintain, need to add this to Document. (Done)
+
+V1.5 and beyond (Planning)
+-Added new AIO model. (official version will handover to let Danny do it)
+-Add new variant of app that simplifies the app UI (Planning)
+-Dealing with 16 bit-PCM resolution issue (solution still under planning)
