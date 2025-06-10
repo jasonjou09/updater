@@ -1,5 +1,5 @@
 {
-  "latest_version": "1.5",
+  "latest_version": "2.0",
   "download_url": "https://hp-my.sharepoint.com/:f:/r/personal/danny_lee_hp_com/Documents/AI%20Rattling/AI%20Rattling%20Analyzer?csf=1&web=1&e=nyFxij",
-  "changelog": "V1.5 \n-Added new 400_600_Model. \n-Changed naming scanning system to incoporate Quanta's naming scheme."
+  "changelog": "V2.0 \n-Add Alpha Wave track as third test section. \n-Update 800 model. \n-Update 1000 alpha model. \n-Change music playback UI to graph tab."
 }
