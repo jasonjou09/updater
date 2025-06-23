@@ -1,5 +1,5 @@
 {
-  "latest_version": "2.0",
+  "latest_version": "2.1",
   "download_url": "https://hp-my.sharepoint.com/:f:/r/personal/danny_lee_hp_com/Documents/AI%20Rattling/AI%20Rattling%20Analyzer?csf=1&web=1&e=nyFxij",
-  "changelog": "V2.0 \n-Add Alpha Wave track as third test section. \n-Update 800 model. \n-Update 1000 alpha model. \n-Change music playback UI to graph tab."
+  "changelog": "V2.1 \n-Fixed major alignment bug caused by phase issues from Cashmere.\n-Quantized models to reduce the app size by 4, now it is only about 870MB.\n-Fine-tune all current models.\n-Improve MWS model.\n-Fixed the bug of alpha result graph not resetting upon pressing reset button."
 }
